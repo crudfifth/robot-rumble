@@ -1,0 +1,28 @@
+// TypeScriptのコンパイル設定を管理するファイル
+{
+  // コンパイル対象のファイル
+  "files": [],
+
+  // 参照する設定ファイル
+  "references": [ 
+    { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.node.json" }
+  ],
+
+  // コンパイラオプション
+  "compilerOptions": {
+    "module": "ESNext", // モジュールシステム指定
+    "moduleResolution": "bundler", // モジュール解決方法
+    "target": "ESNext", // 出力するJSのバージョン
+    "strict": true, // 厳格な型チェック有効化
+    "skipLibCheck": true, // 外部ライブラリの型チェックをスキップ
+    "baseUrl": "../src", // ベースURL
+    "paths": {
+      "@/*": ["*"] // エイリアス
+    },
+    "types": ["tailwindcss", "node"]
+  },
+
+  // コンパイル対象のファイル
+  "include": ["config/cypress.config.ts", "cypress/**/*.ts"]
+}
